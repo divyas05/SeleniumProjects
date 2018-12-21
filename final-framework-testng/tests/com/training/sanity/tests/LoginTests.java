@@ -1,5 +1,7 @@
 package com.training.sanity.tests;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -28,6 +30,7 @@ public class LoginTests {
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);
+		
 	}
 
 	@BeforeMethod
@@ -38,6 +41,7 @@ public class LoginTests {
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
 		driver.get(baseUrl);
+		
 	}
 	
 	@AfterMethod
@@ -45,11 +49,18 @@ public class LoginTests {
 		Thread.sleep(1000);
 		driver.quit();
 	}
-	@Test
-	public void validLoginTest() {
-		loginPOM.sendUserName("admin");
-		loginPOM.sendPassword("admin@123");
+	@Test(priority=1)
+	public void validLoginTest() throws InterruptedException  {
+		loginPOM.sendUserName("manmen");
+		loginPOM.sendPassword("manmen123");
 		loginPOM.clickLoginBtn(); 
-		screenShot.captureScreenShot("First");
+		
+		screenShot.captureScreenShot("A1");
+		String Actual=loginPOM.welcome.getText();
+		String Expected="Hello man men and welcome,";
+		assertEquals(Expected,Actual);
+		System.out.println(Actual);
 	}
+		
+	
 }

@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPOM {
-	private WebDriver driver; 
+	 WebDriver driver; 
 	
 	public LoginPOM(WebDriver driver) {
 		this.driver = driver; 
@@ -22,6 +22,9 @@ public class LoginPOM {
 	@FindBy(id="formLogin_submitAuth")
 	private WebElement loginBtn; 
 	
+	@FindBy(xpath="//*[@id=\"homepage-course\"]/div/p[1]")
+	public WebElement welcome; 
+	
 	public void sendUserName(String userName) {
 		this.userName.clear();
 		this.userName.sendKeys(userName);
@@ -35,4 +38,10 @@ public class LoginPOM {
 	public void clickLoginBtn() {
 		this.loginBtn.click(); 
 	}
+	public void welcome() {
+		this.welcome.getText(); 
+		String Actual=welcome.getText();
+		
+	}
+	
 }
