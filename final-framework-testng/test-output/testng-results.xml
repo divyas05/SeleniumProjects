@@ -1,57 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="33424" started-at="2019-01-02T07:54:11Z" finished-at="2019-01-02T07:54:44Z">
+  <suite name="Default suite" duration-ms="51328" started-at="2019-01-02T11:55:44Z" finished-at="2019-01-02T11:56:36Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="33424" started-at="2019-01-02T07:54:11Z" finished-at="2019-01-02T07:54:44Z">
+    <test name="Default test" duration-ms="51328" started-at="2019-01-02T11:55:44Z" finished-at="2019-01-02T11:56:36Z">
       <class name="com.training.sanity.tests.reportbysearchTest39">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.reportbysearchTest39@42d80b78]" name="setUpBeforeClass" is-config="true" duration-ms="12818" started-at="2019-01-02T07:54:11Z" finished-at="2019-01-02T07:54:23Z">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.reportbysearchTest39@42d80b78]" name="setUpBeforeClass" is-config="true" duration-ms="8482" started-at="2019-01-02T11:55:44Z" finished-at="2019-01-02T11:55:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="validLoginTest()[pri:1, instance:com.training.sanity.tests.reportbysearchTest39@42d80b78]" name="validLoginTest" duration-ms="6130" started-at="2019-01-02T07:54:23Z" finished-at="2019-01-02T07:54:30Z">
+        <test-method status="PASS" signature="validLoginTest()[pri:1, instance:com.training.sanity.tests.reportbysearchTest39@42d80b78]" name="validLoginTest" duration-ms="6074" started-at="2019-01-02T11:55:53Z" finished-at="2019-01-02T11:55:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginTest -->
-        <test-method status="FAIL" signature="validreportTest()[pri:2, instance:com.training.sanity.tests.reportbysearchTest39@42d80b78]" name="validreportTest" duration-ms="13434" started-at="2019-01-02T07:54:30Z" finished-at="2019-01-02T07:54:43Z">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at com.training.sanity.tests.reportbysearchTest39.validreportTest(reportbysearchTest39.java:72)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method status="PASS" signature="validreportTest()[pri:2, instance:com.training.sanity.tests.reportbysearchTest39@42d80b78]" name="validreportTest" duration-ms="35737" started-at="2019-01-02T11:55:59Z" finished-at="2019-01-02T11:56:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validreportTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.reportbysearchTest39@42d80b78]" name="tearDown" is-config="true" duration-ms="1011" started-at="2019-01-02T07:54:43Z" finished-at="2019-01-02T07:54:44Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.reportbysearchTest39@42d80b78]" name="tearDown" is-config="true" duration-ms="1001" started-at="2019-01-02T11:56:35Z" finished-at="2019-01-02T11:56:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
