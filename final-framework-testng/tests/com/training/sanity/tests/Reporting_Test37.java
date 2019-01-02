@@ -1,6 +1,9 @@
 /*TO verify whether application allows teacher to Report & send mail to student about the test submitted*/
 package com.training.sanity.tests;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -24,12 +27,16 @@ public class Reporting_Test37 {
 	private static Properties properties;
 	private ScreenShot screenShot;
 	private ReportingPOM report;
+	private Robot robot;
 	
 	@BeforeClass
-	public  void setUpBeforeClass() throws IOException {
+	public  void setUpBeforeClass() throws IOException, AWTException {
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);
+		robot= new Robot();
+		robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+		robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new LoginPOM(driver); 
 		report = new ReportingPOM(driver);
@@ -60,7 +67,10 @@ public void validreportTest() throws InterruptedException
 	screenShot.captureScreenShot("G3");
 	report.sendreport();
 	screenShot.captureScreenShot("G4");
-	Thread.sleep(5000);
+	Thread.sleep(1000);
+	robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+	robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+	Thread.sleep(2000);
 	report.sendstudent();//student
 	Thread.sleep(5000);
 	screenShot.captureScreenShot("G5");

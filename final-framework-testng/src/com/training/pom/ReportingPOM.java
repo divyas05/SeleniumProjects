@@ -19,13 +19,13 @@ public class ReportingPOM {
 
 	@FindBy(linkText="SELENIUM FRAMEWORK")  //crate group
 	private WebElement course; 
-	@FindBy(xpath="//*[@id=\"toolimage_646\"]")//report
+	@FindBy(xpath="//*[@id=\"toolimage_1811\"]")//report
 	private WebElement Report;
-	@FindBy(xpath="//*[contains(@href,'myStudents.php?student=15')contains(@title,'2rightarrow.png')]") //student
+	@FindBy(xpath="//*[contains(@title,'2rightarrow.png')]") //student
 	private WebElement student;
 	@FindBy(xpath="/html/body/div[1]/section/div/div[4]/table/tbody/tr/td[5]/a/img")//click on quiz
 	private WebElement quiz;
-	@FindBy(linkText="Send email") //click on checkbox
+	@FindBy(name="send_notification") //click on checkbox
 	private WebElement sendmail; 
 	@FindBy(name="submit")  //click on submit
 	private WebElement correcttest; 

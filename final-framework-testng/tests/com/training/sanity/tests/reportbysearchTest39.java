@@ -1,6 +1,9 @@
 /*To verify whether application allows teacher to add project details*/
 package com.training.sanity.tests;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -27,15 +30,17 @@ public class reportbysearchTest39 {
 	private ScreenShot screenShot;
 	private reportbysearchPOM reporting;
 	private  JavascriptExecutor jse;
-	
+	private Robot robot;
 
 	
 	@BeforeClass
-	public  void setUpBeforeClass() throws IOException {
+	public  void setUpBeforeClass() throws IOException, AWTException {
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);
-		JavascriptExecutor jse = (JavascriptExecutor) driver;  
+		robot= new Robot();
+		robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+		robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new LoginPOM(driver); 
 		reporting = new reportbysearchPOM(driver);
@@ -71,7 +76,9 @@ public void validreportTest() throws InterruptedException,IOException
 	reporting.sendsearch();
 	screenShot.captureScreenShot("I4");
 	Thread.sleep(2000);
-	jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+	robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+	robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+	Thread.sleep(3000);
 	reporting.sendstudent();
 	Thread.sleep(3000);
 	screenShot.captureScreenShot("I5");

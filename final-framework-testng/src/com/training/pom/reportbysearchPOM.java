@@ -16,19 +16,19 @@ public class reportbysearchPOM {
 	}
 	
 
-	@FindBy(linkText="SELENIUM FRAMEWORK")  //crate group
+	@FindBy(linkText="SELENIUM FRAMEWORK")  //click on course icon
 	private WebElement course; 
-	@FindBy(xpath="//*[@id=\"toolimage_1811\"]")
+	@FindBy(xpath="//*[@id=\"toolimage_1811\"]")//click on reporting icon
 	private WebElement Report;
 	@FindBy(name="user_keyword")
-	private WebElement name;
+	private WebElement name;//enter name in search box
 	@FindBy(name="submit")
 	private WebElement search;
-	@FindBy(xpath="//*[contains(@title,'2rightarrow.png')]") 
+	@FindBy(xpath="//*[contains(@title,'2rightarrow.png')]") //click on student icon
 	private WebElement student;
 	@FindBy(xpath="/html/body/div[1]/section/div/div[4]/table/tbody/tr/td[5]/a/img")
 	private WebElement quiz;
-	@FindBy(linkText="Send email") 
+	@FindBy(name="send_notification") //click on check box
 	private WebElement sendmail; 
 	@FindBy(name="submit")  
 	private WebElement correcttest; 
