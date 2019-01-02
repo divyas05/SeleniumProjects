@@ -30,7 +30,7 @@ public  void setUpBeforeClass() throws IOException {
 	properties.load(inStream);
 	driver = DriverFactory.getDriver(DriverNames.CHROME);
 	loginPOM = new LoginPOM(driver); 
-    searchcoursePOM course = new searchcoursePOM(driver);
+    
 	baseUrl = properties.getProperty("baseURL");
 	screenShot = new ScreenShot(driver); 
 	// open the browser 
@@ -48,11 +48,13 @@ public void tearDown() throws Exception {
 	loginPOM.sendPassword("manmen123");
 	loginPOM.clickLoginBtn(); 
 	screenShot.captureScreenShot("E1");
+	Thread.sleep(3000);
 	
 }
 @Test(priority=2)
 public void validcataloguesearch() throws InterruptedException  {
 	System.out.println("abc");
+	searchcoursePOM course = new searchcoursePOM(driver);
 	course.sendcatalogue();
 	Thread.sleep(3000);
 	screenShot.captureScreenShot("E2");

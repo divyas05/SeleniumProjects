@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="20851" started-at="2018-12-21T08:43:29Z" finished-at="2018-12-21T08:43:50Z">
+  <suite name="Default suite" duration-ms="33424" started-at="2019-01-02T07:54:11Z" finished-at="2019-01-02T07:54:44Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="20851" started-at="2018-12-21T08:43:29Z" finished-at="2018-12-21T08:43:50Z">
-      <class name="com.training.sanity.tests.searchcourse_Test">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.searchcourse_Test@42d80b78]" name="setUpBeforeClass" is-config="true" duration-ms="12625" started-at="2018-12-21T08:43:29Z" finished-at="2018-12-21T08:43:42Z">
+    <test name="Default test" duration-ms="33424" started-at="2019-01-02T07:54:11Z" finished-at="2019-01-02T07:54:44Z">
+      <class name="com.training.sanity.tests.reportbysearchTest39">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.reportbysearchTest39@42d80b78]" name="setUpBeforeClass" is-config="true" duration-ms="12818" started-at="2019-01-02T07:54:11Z" finished-at="2019-01-02T07:54:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="validAddCourse()[pri:1, instance:com.training.sanity.tests.searchcourse_Test@42d80b78]" name="validAddCourse" duration-ms="6074" started-at="2018-12-21T08:43:42Z" finished-at="2018-12-21T08:43:48Z">
+        <test-method status="PASS" signature="validLoginTest()[pri:1, instance:com.training.sanity.tests.reportbysearchTest39@42d80b78]" name="validLoginTest" duration-ms="6130" started-at="2019-01-02T07:54:23Z" finished-at="2019-01-02T07:54:30Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validAddCourse -->
-        <test-method status="FAIL" signature="validcataloguesearch()[pri:2, instance:com.training.sanity.tests.searchcourse_Test@42d80b78]" name="validcataloguesearch" duration-ms="3" started-at="2018-12-21T08:43:48Z" finished-at="2018-12-21T08:43:48Z">
+        </test-method> <!-- validLoginTest -->
+        <test-method status="FAIL" signature="validreportTest()[pri:2, instance:com.training.sanity.tests.reportbysearchTest39@42d80b78]" name="validreportTest" duration-ms="13434" started-at="2019-01-02T07:54:30Z" finished-at="2019-01-02T07:54:43Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
-at com.training.sanity.tests.searchcourse_Test.validcataloguesearch(searchcourse_Test.java:56)
+at com.training.sanity.tests.reportbysearchTest39.validreportTest(reportbysearchTest39.java:72)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -50,12 +50,12 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validcataloguesearch -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.searchcourse_Test@42d80b78]" name="tearDown" is-config="true" duration-ms="2017" started-at="2018-12-21T08:43:48Z" finished-at="2018-12-21T08:43:50Z">
+        </test-method> <!-- validreportTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.reportbysearchTest39@42d80b78]" name="tearDown" is-config="true" duration-ms="1011" started-at="2019-01-02T07:54:43Z" finished-at="2019-01-02T07:54:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.sanity.tests.searchcourse_Test -->
+      </class> <!-- com.training.sanity.tests.reportbysearchTest39 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
