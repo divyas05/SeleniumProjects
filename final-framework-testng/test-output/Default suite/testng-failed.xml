@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.reportbysearchTest39">
+      <class name="com.training.sanity.tests.unsubscribe_Test">
         <methods>
-          <include name="tearDown"/>
-          <include name="validreportTest"/>
+          <include name="validunsubscribe"/>
           <include name="setUpBeforeClass"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.reportbysearchTest39 -->
+      </class> <!-- com.training.sanity.tests.unsubscribe_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
