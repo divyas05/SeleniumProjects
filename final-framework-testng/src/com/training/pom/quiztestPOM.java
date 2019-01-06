@@ -1,3 +1,4 @@
+/*TO verify whether application allows teacher to review, rate & send email about the test*/
 package com.training.pom;
 
 import org.openqa.selenium.WebDriver;

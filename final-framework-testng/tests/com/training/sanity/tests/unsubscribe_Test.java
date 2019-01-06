@@ -1,8 +1,13 @@
+/*To verify whether application allows teacher to unsubscribe registered user from the course*/
 package com.training.sanity.tests;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
@@ -21,18 +26,22 @@ public class unsubscribe_Test {
 	private LoginPOM loginPOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
+	private unsubscribePOM unsub;
 
 @BeforeClass
-public  void setUpBeforeClass() throws IOException {
+public  void setUpBeforeClass() throws IOException, AWTException {
 	properties = new Properties();
 	FileInputStream inStream = new FileInputStream("./resources/others.properties");
 	properties.load(inStream);
+	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	driver = DriverFactory.getDriver(DriverNames.CHROME);
 	loginPOM = new LoginPOM(driver); 
+	unsub =new unsubscribePOM(driver);
 	baseUrl = properties.getProperty("baseURL");
 	screenShot = new ScreenShot(driver); 
 	// open the browser 
 	driver.get(baseUrl);
+	
 	
 }
 @AfterTest
@@ -50,21 +59,15 @@ public void tearDown() throws Exception {
 }
 @Test(priority=2)
 public void validunsubscribe() throws InterruptedException  {
-	unsubscribePOM  unsub =new unsubscribePOM(driver);
-	unsub.createdlink();
-	Thread.sleep(3000);
+	unsub.sendcourse();
 	screenShot.captureScreenShot("D2");
-	unsub.usericon();
-	Thread.sleep(1000);
+	unsub.sendicon();
 	screenShot.captureScreenShot("D3");
-	unsub.checkbox();//selenium framework only subscribed by the student
-	Thread.sleep(1000);
+	unsub.sendcheckbox();//selenium framework only subscribed by the student
 	screenShot.captureScreenShot("D4");
-	unsub.unsubbutton();
+	unsub.sendunsub();
 	screenShot.captureScreenShot("D5");
-	Thread.sleep(2000);
 	unsub.alert();
-	Thread.sleep(3000);
 	screenShot.captureScreenShot("D6");
 }
 

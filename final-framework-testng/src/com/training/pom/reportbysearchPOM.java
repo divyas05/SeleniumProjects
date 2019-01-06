@@ -12,7 +12,7 @@ public class reportbysearchPOM {
 	{
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
-		WebDriverWait wait = new WebDriverWait(driver,30); 
+		
 	}
 	
 

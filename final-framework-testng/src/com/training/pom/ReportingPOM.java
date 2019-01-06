@@ -1,3 +1,4 @@
+/*TO verify whether application allows teacher to Report & send mail to student about the test submitted*/
 package com.training.pom;
 
 import org.openqa.selenium.JavascriptExecutor;

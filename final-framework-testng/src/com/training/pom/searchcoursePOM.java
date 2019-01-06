@@ -1,3 +1,4 @@
+/*To verify whether application allows teacher to display list of courses created in catalog page*/
 package com.training.pom;
 
 import org.openqa.selenium.WebDriver;

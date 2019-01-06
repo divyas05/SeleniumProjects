@@ -1,3 +1,4 @@
+/*To verify whether application allows Teacher to get logged in by entering valid credentials*/
 package com.training.pom;
 
 import org.openqa.selenium.WebDriver;

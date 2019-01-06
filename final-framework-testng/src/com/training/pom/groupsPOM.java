@@ -1,3 +1,4 @@
+/*To verify whether application allows teacher to create a group & modify the settings*/
 package com.training.pom;
 
 import org.openqa.selenium.WebDriver;

@@ -1,3 +1,4 @@
+/*To verify whether application allows teacher to display list of courses created in catalog page*/
 package com.training.sanity.tests;
 
 import java.io.FileInputStream;
@@ -30,7 +31,7 @@ public  void setUpBeforeClass() throws IOException {
 	properties.load(inStream);
 	driver = DriverFactory.getDriver(DriverNames.CHROME);
 	loginPOM = new LoginPOM(driver); 
-    
+	course = new searchcoursePOM(driver);
 	baseUrl = properties.getProperty("baseURL");
 	screenShot = new ScreenShot(driver); 
 	// open the browser 
@@ -49,12 +50,12 @@ public void tearDown() throws Exception {
 	loginPOM.clickLoginBtn(); 
 	screenShot.captureScreenShot("E1");
 	Thread.sleep(3000);
+	System.out.println("login successfull test6");
 	
 }
 @Test(priority=2)
 public void validcataloguesearch() throws InterruptedException  {
 	System.out.println("abc");
-	searchcoursePOM course = new searchcoursePOM(driver);
 	course.sendcatalogue();
 	Thread.sleep(3000);
 	screenShot.captureScreenShot("E2");
@@ -64,7 +65,7 @@ public void validcataloguesearch() throws InterruptedException  {
 	course.sendclickbutton();
 	Thread.sleep(1000);
 	screenShot.captureScreenShot("E4");
-	
+	System.out.println("search successfull test7");
 }
 
 }

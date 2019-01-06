@@ -1,3 +1,4 @@
+/*To verify whether application allows Teacher to get logged in by entering valid credentials*/
 package com.training.sanity.tests;
 
 import static org.testng.Assert.assertEquals;
@@ -60,6 +61,7 @@ public class LoginTests {
 		String Expected="Hello man men and welcome,";
 		assertEquals(Expected,Actual);
 		System.out.println(Actual);
+		System.out.println("login successfull test1");
 	}
 		
 	

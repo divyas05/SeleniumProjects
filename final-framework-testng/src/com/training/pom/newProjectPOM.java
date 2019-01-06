@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 
 
 public class newProjectPOM {
-	
 	WebDriver driver; 
 	public newProjectPOM(WebDriver driver)
 	{

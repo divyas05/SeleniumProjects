@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name = "Sample test Suite">
+<suite name = "TestAll">
    <test name = "Sample test">
       <classes>
          <class name = "com.training.sanity.tests.LoginTests" />
+          <class name = "com.training.sanity.tests.addcourse_Test" />
+           <class name = "com.training.sanity.tests.adddescription_test" />
+             <class name = "com.training.sanity.tests.searchcourse_Test" />
       </classes>
    </test>
 </suite>	

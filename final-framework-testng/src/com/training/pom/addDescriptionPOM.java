@@ -1,8 +1,10 @@
+/*To verify whether application allows teacher to enter course description*/
 package com.training.pom;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 
 public class addDescriptionPOM {
@@ -11,29 +13,44 @@ public class addDescriptionPOM {
 	public addDescriptionPOM(WebDriver driver)
 	{
 	this.driver = driver; 
+	PageFactory.initElements(driver, this);
 	}
+@FindBy(linkText="SELENIUM FRAMEWORK")//click course link
+private WebElement courselink;
+@FindBy(xpath="//*[contains(@title,'Course description')]")//click on course desc icon
+private WebElement descicon; 
+@FindBy(xpath="//*[@id=\"content-section\"]/div/div[2]/a[1]/img")  //click on desc icon
+private WebElement desc;
+@FindBy(name="title")  //enter title
+private WebElement title_desc;
+@FindBy(xpath="//*[@id='cke_1_contents']//iframe") //enter description
+private WebElement description;
+@FindBy(name="submit")
+private WebElement submit;
 
-	public void createdlink()
+
+	public void sendcourselink()
 	{
-	driver.findElement(By.xpath("//*[@id=\"page\"]/div/div/div/div/div[2]/h4/a")).click();	
+	this.courselink.click();	
 	}
-	public void icon() {
-		driver.findElement(By.id("toolimage_553")).click();	
+	public void senddescicon() {
+		this.descicon.click();
 	}
-	public void desc()
+	public void senddesc()
 	{
-	driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]/a[1]/img")).click();	
+	this.desc.click();	
 	}
-	public void title_desc() {
-		driver.findElement(By.name("title")).sendKeys("selenium course for beginners");	
+	public void title_desc(String title) {
+		this.title_desc.sendKeys(title);
 	}
-	public void desc_body() {
-		driver.switchTo().frame(driver.findElement(By.xpath("//*[@id=\"cke_1_contents\"]/iframe")));
+	public void desc_body(String body) {
+		driver.switchTo().frame(description);
 		WebElement printbody = driver.switchTo().activeElement();
-		printbody.sendKeys("selenium course for beginners");
+		printbody.sendKeys(body);
 		driver.switchTo().defaultContent();
+		
 	}
-	public void submit() {
-		driver.findElement(By.name("submit")).click();
+	public void sendsubmit() {
+		this.submit.click();
 	}
-	}// WebElement introtext =driver.findElement(By.xpath("//*[@id="course_tools"]/div[1]/div/div[1]/p[2]"));
+	}

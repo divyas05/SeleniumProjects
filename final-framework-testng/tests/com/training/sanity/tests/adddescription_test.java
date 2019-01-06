@@ -1,3 +1,4 @@
+/*To verify whether application allows teacher to enter course description*/
 package com.training.sanity.tests;
 
 import java.io.FileInputStream;
@@ -5,6 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -22,19 +24,16 @@ public class adddescription_test {
 	private LoginPOM loginPOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
+	private addDescriptionPOM description;
 
 	@BeforeClass
-	public static void setUpBeforeClass() throws IOException {
+	public  void setUpBeforeClass() throws IOException {
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);
-		
-	}
-
-	@BeforeMethod
-	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new LoginPOM(driver); 
+		description=new addDescriptionPOM(driver);
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
@@ -42,35 +41,39 @@ public class adddescription_test {
 		
 	}
 	
-	@AfterMethod
+	@AfterTest
 	public void tearDown() throws Exception {
 		Thread.sleep(1000);
 		driver.quit();
 	}
-	@Test
-	public void validAdddesc() throws InterruptedException  {
+	@Test(priority=1)
+	public void validloginTest() throws InterruptedException  {
 	loginPOM.sendUserName("manmen");
 	loginPOM.sendPassword("manmen123");
 	loginPOM.clickLoginBtn(); 
 	screenShot.captureScreenShot("C1");
-	addDescriptionPOM description=new addDescriptionPOM(driver);
-	description.createdlink();
+	System.out.println("login successful test4");
+	}
+	@Test(priority=2)
+	public void validAdddescTest() throws InterruptedException  {
+	description.sendcourselink();
 	Thread.sleep(3000);
 	screenShot.captureScreenShot("C2");
-	description.icon();
+	description.senddescicon();
 	Thread.sleep(3000);
 	screenShot.captureScreenShot("C3");
-	description.desc();
+	description.senddesc();
 	Thread.sleep(3000);
 	screenShot.captureScreenShot("C4");
-	description.title_desc();
+	description.title_desc("Selenium course");
 	Thread.sleep(3000);
 	screenShot.captureScreenShot("C5");
-	description.desc_body();
+	description.desc_body("Selenium is an automation tool");
 	Thread.sleep(3000);
 	screenShot.captureScreenShot("C6");
-	description.submit();
+	description.sendsubmit();
 	Thread.sleep(1000);
 	screenShot.captureScreenShot("C7");
+	System.out.println("description added test5");
 	}
 }
